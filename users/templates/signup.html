@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sign up</title>
+</head>
+<body>
+    <h1>회원가입 페이지</h1>
+
+<form action="{% url 'users:signup' %}" method="POST">
+    {% csrf_token %}
+<input type="text" name="username" placeholder="username" id="usernama" class="usernama"/> 
+<!-- 윗줄에서 id 하나 class는 여러개 집단을 의미하는것으로 프론트 기능이라 생각하면 되고
+     우리가 신경쓸것은 name="username" 백엔드에서 이것은 변수지정이라 생각하면된다-->
+<input type="password" name="password" placeholder="password"/>
+<input type="password"name="passwordcheck" placeholder="passwordcheck"/>
+<input type="submit" />
+
+</form>
+</body>
+</html>
