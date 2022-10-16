@@ -19,4 +19,9 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('users/', include('users.urls')),
+    
+    
 ]
+
+# URL 네임스페이스를 사용했는가?? name='user'이러한 형태가 아닌데 include('users.urls') 이것이 네임스페이스인가?
+# 
