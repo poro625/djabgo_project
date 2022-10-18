@@ -15,7 +15,7 @@ def signup(request):
         password = request.POST.get('password')
         passwordcheck = request.POST.get('passwordcheck')
         if password == passwordcheck:
-            User.objects.create_user(username = username, password = password)
+            User.objects.create_user(username = username, password = password) # User.objects.get의 뜻은 User의 DB(objects)에 있는 테이블에서 .create_user를 새로 만들어라라는 뜻 그냥 create는 메소드 명령어이다
             return HttpResponse('회원가입 완료')
         else :
             return HttpResponse('비밀번호 확인 틀렸습니다')
@@ -46,8 +46,8 @@ def user(request):
 
 def profile(request, username): #같이 들어온 인자 값이 있기 때문에 username을 쓴다.
                                 # 그래서 urls.py에서 <str:username>로 유저네임을 받으면 유저네임을 보여주도록 프로필페이지를 작성할 수 있다.
-    user = User.objects.get( username = username )
-    user = get_object_or_404(User, username=username)  ## 
+    user = User.objects.get( username = username ) 
+    user = get_object_or_404(User, username=username)  
     context = {
         'user' : user
 
