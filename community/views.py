@@ -22,8 +22,7 @@ def creative_article(request):
         return redirect('community:index')
 
 def article_detail(request, article_id):
-    
-    article = Article.objects.get(Article, id = article_id)  
+    article = get_object_or_404(Article, id = article_id)    
     context = {
         'article' : article
 
