@@ -13,7 +13,18 @@
     <p>{{  article.update_at  }}</p>
     <p>{{article.user}}</p>
 
+    {% if article.user == request.user %}
+    <a href="{% url 'community:update_article' article.id %}">
+    <button>수정버튼</button>
+    </a>
+    <!-- a테그 같은경우 GET 방식만 가능 -->
 
+    <form action="{% url 'community:delete_article' article.id %}" method="POST">
+    {% csrf_token %}
+    <button type="submit">삭제버튼</button>
+
+    </form>
+    {% endif %}
 
 </body>
 </html>
