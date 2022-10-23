@@ -13,11 +13,12 @@
     <div>
 
         <h3>{{article.title}}</h3>
-        <p>{{article.content}}</p>
-        <p>{{article.user}}</p>        
+        <a href="{% url 'community:article_detail' article.id %}">상세페이지로 이동<a>
+            
+
 
     </div>
-
+{% comment %} article.id이것은 인자이며 url에서 9번째 줄 <int:article_id>이것과 관계를 가지고 있다 상세페이지로 이동을 누르면 어떤 특정한 화면으로 넘어가야하는데 이부분을 int:article_id로 넘어가게 조치를 취하는것이다/// 매개변수.테이블 형태이다     {% endcomment %}
 
     {% endfor %}
 </body>
